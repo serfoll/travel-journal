@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header";
+import data from "./data";
+import Places from "./components/places";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const placeItems = data.map((t) => {
+    return <Places place={t} key={t.id} />;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <section className="content-wrapper">{placeItems}</section>
     </div>
   );
-}
+};
 
 export default App;

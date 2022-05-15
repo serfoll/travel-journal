@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+@import url(./css/colors.css);
+
+.app {
+  position: relative;
+  min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-wrapper {
+  max-width: 550px;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header {
+  width: 100vw;
+  height: 55px;
+  background-color: var(--color-red-50);
+  color: var(--color-white-100);
+}
+header > h1 {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  line-height: 18px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.globe-icon {
+  height: 24px;
+  width: 24px;
+}
+.card {
+  position: relative;
+  top: 20px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-bottom: 2px solid var(--color-white-90);
+  padding: 20px;
+  font-size: 10.24px;
+}
+.card:nth-last-of-type(-n + 1) {
+  border-bottom: none;
+}
+.img-holder {
+  min-width: 125px;
+  height: 168px;
+  margin-right: auto;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 168px;
+}
+
+.img-holder:hover {
+  animation: zoom-in-out 0.5s infinite alternate ease-in-out;
+}
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-info {
+  min-height: 116px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.card-country-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.country-name {
+  text-transform: uppercase;
+  color: var(--color-dark-purple-100);
+}
+.card-icon {
+  color: var(--color-red-50);
+}
+.card-country-info > a,
+.card-country-info > a:visited {
+  color: var(--color-dark-purple-10);
+  font-weight: 400;
+  text-decoration: underline;
+}
+.card-country-info > a:hover {
+  font-weight: 700;
+  text-decoration: none;
+}
+.card-location-name {
+  text-transform: capitalize;
+  color: var(--color-dark-purple-100);
+  font-size: 25px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.stay-duration {
+  font-weight: 700;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+.place-info {
+  min-height: 45px;
+  font-weight: 400;
+  line-height: 150%;
 }
